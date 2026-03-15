@@ -103,34 +103,42 @@ $('.section-6 .owl-carousel').owlCarousel({
 });
 
 
-const btn1 = document.getElementById('btn-1');
-const btn2 = document.getElementById('btn-2');
-const img1 = document.getElementById('img-1');
-const img2 = document.getElementById('img-2');
+document.addEventListener('DOMContentLoaded', () => {
+    // 1. Lấy tất cả các nút (thẻ a có id bắt đầu bằng btn-)
+    const buttons = document.querySelectorAll('[id^="btn-"]');
+    const contents = document.querySelectorAll('.content-box');
 
-// Hàm xử lý tráo đổi
-function toggleContent(showImg, hideImg, activeBtn, inactiveBtn) {
-  // Hiện ảnh này, ẩn ảnh kia
-  showImg.classList.add('show');
-  hideImg.classList.remove('show');
-  
-  // Đổi trạng thái active của nút
-  activeBtn.classList.add('active');
-  inactiveBtn.classList.remove('active');
-  showImg.scrollIntoView({
-    behavior: 'smooth', // Cuộn mượt mà thay vì nhảy lập tức
-    block: 'center'     // Đưa phần tử ra giữa màn hình (hoặc dùng 'start')
-  });
-}
+    if (buttons.length === 0) {
+        console.error("Không tìm thấy nút nào có ID bắt đầu bằng 'btn-'");
+        return;
+    }
 
-// Gán sự kiện cho Nút 1
-btn1.addEventListener('click', () => {
-  toggleContent(img1, img2, btn1, btn2);
-});
+    buttons.forEach(btn => {
+        btn.onclick = function(e) {
+            e.preventDefault(); // Rất quan trọng: Ngăn thẻ <a> làm load lại trang
 
-// Gán sự kiện cho Nút 2
-btn2.addEventListener('click', () => {
-  toggleContent(img2, img1, btn2, btn1);
+            // Lấy số từ ID của nút (ví dụ: btn-3 -> lấy số 3)
+            const idNumber = this.id.split('-')[1];
+            const targetImg = document.getElementById(`img-${idNumber}`);
+
+            console.log("Bạn vừa click nút số:", idNumber); // Kiểm tra xem nút có ăn click không
+
+            if (targetImg) {
+                // Xóa active/show của tất cả
+                buttons.forEach(b => b.classList.remove('active'));
+                contents.forEach(c => c.classList.remove('show'));
+
+                // Thêm active/show cho cái được chọn
+                this.classList.add('active');
+                targetImg.classList.add('show');
+
+                // Cuộn mượt
+                targetImg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            } else {
+                console.error(`Không tìm thấy phần tử img-${idNumber} tương ứng`);
+            }
+        };
+    });
 });
 
 const target = document.getElementById('targetDiv');

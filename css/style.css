@@ -119,6 +119,7 @@ img{
 .md-title{
   text-align: center;
   color: #0040b1;
+  margin-bottom: 30px;
 }
 .md-title span{
   font-size: calc(15px + 2vw);
@@ -135,10 +136,11 @@ img{
 .page-main .section-1 .md-content .md-left{
   width: 45%;
 }
-.page-main .section-1 .md-content .md-left a img:hover{
-  transform: scale(1.1);
-  transition-duration: 0.5s;
+.page-main .section-1 .md-content .md-left a{
+  display: block;
+  animation: zoom-in 2s infinite;
 }
+
 .page-main .section-1 .md-content .md-right{
   width: 55%;
   padding-left: 5%;
@@ -175,6 +177,9 @@ img{
 .page-main .section-3 .md-content .md-right{
   width: 60%;
 }
+.page-main .section-3 .md-content .md-right img{
+  border-radius: 20px;
+}
 .page-main .section-3 .md-content .md-left{
   width: 40%;
 }
@@ -182,6 +187,9 @@ img{
   font-size: calc(8px + 2vw);
   color: #df3131;
   font-weight: 700;
+}
+.page-main .section-3 .md-content .md-left span{
+  display: block;
 }
 .page-main .section-3 .owl-nav span{
   display: none;
@@ -280,6 +288,9 @@ img{
   color: #f8532b;
 }
 .page-main .section-4 .tkb-2{
+  color: #0b7733;
+}
+.page-main .section-4 .tkb-3{
   color: #0b7733;
 }
 .page-main .section-5 .md-content{
@@ -416,7 +427,6 @@ img{
   background: var(--red);
   border-radius: 24px;
   padding: 36px 32px;
-  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
 }
 .register-form h3 {
   font-family: var(--font-display);
@@ -647,6 +657,38 @@ p.error{
     width: 92%;
     margin-top: 2px;
   }
+  .page-main .section-3 .md-content .md-left p{
+    font-size: calc(10px + 2vw);
+    margin-bottom: 5px;
+  }
+  .page-main .section-3 .md-content .md-left span{
+    font-size: calc(8px + 1vw);
+  }
+  .page-main .section-3 .md-content .item{
+    padding: 0px 5%;
+    gap: 20px;
+  }
+  .page-main .section-3 .md-content .md-left{
+    width: 50%;
+  }
+  .page-main .section-3 .md-content .md-right{
+    width: 50%;
+  }
+  .page-main .section-3 .owl-nav .owl-prev{
+    left: -2%;
+  }
+  .page-main .section-3 .owl-nav .owl-next{
+    right: -2%;
+  }
+  .page-main .section-3 .md-title{
+    margin-bottom: 30px;
+  }
+  .page-main .section-6 .owl-nav .owl-next{
+    right: -2%;
+  }
+  .page-main .section-6 .owl-nav .owl-prev{
+    left: -2%;
+  }
 }
 .scroll-top{
   position: fixed;
@@ -663,4 +705,122 @@ p.error{
   cursor: pointer;
 }
 
+.page-first-step .section-1{
+  margin-bottom: 0px;
+  position: relative;
+}
+.page-first-step .section-1 img{
+  width: 90%;
+}
+.page-first-step .section-1 .btn-click{
+  display: block;
+  position: absolute;
+  right: 0%;
+  bottom: 0%;
+  width: 40%;
+      animation: zoom-in 2s infinite;
+}
+.page-first-step .section-1 .btn-click img{
+  width: 100%;
+}
+.page-first-step .section-1 p{
+  margin-bottom: 30px;
+}
+.page-first-step .section-1 p span{
+  font-weight: 700;
+}
+.page-first-step .section-2{
+  background: #fff3d0;
+}
+.page-first-step .section-3 .md-content{
+  width: 70%;
+  float: left;
+  
+}
+.page-first-step .section-3 .md-content .md-row{
+  display: grid;
+   grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  width: 70%;
+  margin-top: 30px;
+  gap: 20px;
+}
+.page-first-step .section-3 .md-content .md-row .md-col p{
+  background: #fdbb04;
+  color: #000;
+  border-radius: 20px;
+  text-align: center;
+  padding: 10px 0px;
+  font-weight: 700;
+  font-size: calc(6px + 1vw);
+}
+.page-first-step .section-3 .md-img{
+  width: 30%;
+  float: right;
+}
+.page-first-step .section-4{
+  background: #fff3d0;
+  padding: 40px 0px;
+}
+.page-first-step .section-4 .md-title{
+  width: 50%;
+  display: table;
+  margin: 0 auto 30px auto;
+}
+.page-first-step .section-4 .md-row{
+  display: grid;
+   grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+}
 
+.banner .md-desktop{
+  display: block !important;
+}
+.banner .md-mobile{
+  display: none !important;
+}
+.page-first-step .section-7{
+  background: #fdbb04;
+}
+@media screen and (max-width: 767px){
+  .banner .md-desktop{
+    display: none !important;
+  }
+  .banner .md-mobile{
+    display: block !important;
+  }
+  .page-first-step .section-3 .md-content{
+    float: none;
+    width: 100%;
+    margin-bottom: 30px;
+  }
+  .page-first-step .section-3 .md-content .md-row{
+    width: 100%;
+  }
+  .page-first-step .section-3 .md-content .md-row .md-col p{
+    font-size: calc(15px + 1vw);
+  }
+  .page-first-step .section-4 .md-title{
+    width: 100%;
+  }
+  .page-first-step .section-3 .md-img{
+    float: none;
+    width: 60%;
+    display: table;
+    margin: 0 auto;
+  }
+}
+
+.content-box {
+    display: none; /* Mặc định ẩn */
+}
+
+.content-box.show {
+    display: block; /* Hiện khi có class show */
+    animation: fadeIn 0.5s; /* Thêm hiệu ứng hiện ra cho đẹp */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
