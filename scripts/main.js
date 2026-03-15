@@ -149,3 +149,5 @@ const target = document.getElementById('targetDiv');
       target.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
   });
+
+new WOW().init();

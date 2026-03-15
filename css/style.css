@@ -173,6 +173,7 @@ img{
 .page-main .section-3 .md-content .item{
   display: flex;
   align-items: center;
+  gap: 20px;
 }
 .page-main .section-3 .md-content .md-right{
   width: 60%;
