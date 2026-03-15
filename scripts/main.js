@@ -103,11 +103,20 @@ $('.section-6 .owl-carousel').owlCarousel({
 });
 
 const target = document.getElementById('targetDiv');
-  const buttons = document.querySelectorAll('.scroll-btn');
+const buttons = document.querySelectorAll('.scroll-btn');
 
   buttons.forEach(button => {
     button.addEventListener('click', () => {
       target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+
+const target_1 = document.getElementById('targetDiv-1');
+const buttons_1 = document.querySelectorAll('.scroll-btn-1');
+
+  buttons_1.forEach(button => {
+    button.addEventListener('click', () => {
+      target_1.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
   });
 
