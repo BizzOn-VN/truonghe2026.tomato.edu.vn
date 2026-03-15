@@ -102,45 +102,6 @@ $('.section-6 .owl-carousel').owlCarousel({
     }
 });
 
-
-document.addEventListener('DOMContentLoaded', () => {
-    // 1. Lấy tất cả các nút (thẻ a có id bắt đầu bằng btn-)
-    const buttons = document.querySelectorAll('[id^="btn-"]');
-    const contents = document.querySelectorAll('.content-box');
-
-    if (buttons.length === 0) {
-        console.error("Không tìm thấy nút nào có ID bắt đầu bằng 'btn-'");
-        return;
-    }
-
-    buttons.forEach(btn => {
-        btn.onclick = function(e) {
-            e.preventDefault(); // Rất quan trọng: Ngăn thẻ <a> làm load lại trang
-
-            // Lấy số từ ID của nút (ví dụ: btn-3 -> lấy số 3)
-            const idNumber = this.id.split('-')[1];
-            const targetImg = document.getElementById(`img-${idNumber}`);
-
-            console.log("Bạn vừa click nút số:", idNumber); // Kiểm tra xem nút có ăn click không
-
-            if (targetImg) {
-                // Xóa active/show của tất cả
-                buttons.forEach(b => b.classList.remove('active'));
-                contents.forEach(c => c.classList.remove('show'));
-
-                // Thêm active/show cho cái được chọn
-                this.classList.add('active');
-                targetImg.classList.add('show');
-
-                // Cuộn mượt
-                targetImg.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            } else {
-                console.error(`Không tìm thấy phần tử img-${idNumber} tương ứng`);
-            }
-        };
-    });
-});
-
 const target = document.getElementById('targetDiv');
   const buttons = document.querySelectorAll('.scroll-btn');
 
@@ -151,3 +112,36 @@ const target = document.getElementById('targetDiv');
   });
 
 new WOW().init();
+
+
+
+// Chọn container cha để lắng nghe sự kiện (Event Delegation)
+const mdContent = document.querySelector('.section-4 .md-content');
+
+mdContent.addEventListener('click', (e) => {
+  // Tìm thẻ 'a' gần nhất nếu người dùng click vào hình ảnh bên trong thẻ 'a'
+  const clickedBtn = e.target.closest('a');
+  
+  // Nếu click không trúng thẻ 'a' hoặc không phải nút chúng ta cần, bỏ qua
+  if (!clickedBtn || !['btn-1', 'btn-2'].includes(clickedBtn.id)) return;
+
+  e.preventDefault(); // Ngăn hành động mặc định của thẻ a
+
+  // Xác định ID của phần tử ảnh tương ứng dựa trên ID của nút
+  const targetId = clickedBtn.id === 'btn-1' ? 'img-1' : 'img-2';
+  const targetImg = document.getElementById(targetId);
+  const otherImg = targetId === 'img-1' ? document.getElementById('img-2') : document.getElementById('img-1');
+
+  // 1. Cập nhật hiển thị ảnh
+  otherImg.classList.remove('show');
+  targetImg.classList.add('show');
+
+  // 2. Cập nhật trạng thái 'active' cho các nút
+  document.querySelectorAll('.md-col a').forEach(a => a.classList.remove('active'));
+  clickedBtn.classList.add('active');
+
+  // 3. Cuộn đến vị trí ảnh
+  targetImg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+});
+
+

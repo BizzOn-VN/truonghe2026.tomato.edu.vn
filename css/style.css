@@ -626,13 +626,17 @@ p.error{
     font-size: calc(10px + 2vw);
   }
   .md-title h6{
-    font-size: calc(12px + 2vw);
+    font-size: calc(15px + 2vw);
+  }
+  .page-main .section-4 .image-wrapper p{
+    font-size: calc(15px + 2vw);
   }
   .register-inner{
     display: block;
   }
   .register h6{
-    font-size: calc(12px + 2vw);
+    font-size: calc(15px + 2vw);
+    text-align: center;
   }
   .btn-submit{
     width: 100%;
@@ -824,4 +828,15 @@ p.error{
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
+}
+.back-to-home{
+  position: fixed;
+  bottom: 1%;
+  right: 1%;
+  font-weight: 700;
+  background: #0040b1;
+  color: #FFF;
+  padding: 10px 20px;
+  border-radius: 20px;
+  z-index: 999;
 }
