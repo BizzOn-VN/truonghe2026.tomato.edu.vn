@@ -505,7 +505,7 @@ img{
 }
 
 p.error{
-  color: #FFF;
+  color: #fdbb04;
   font-style: italic;
   font-size: calc(2px + 0.8vw);
   margin-top: 3px;
@@ -591,6 +591,9 @@ p.error{
   animation: none;
 }
 @media screen and (max-width: 767px){
+  p.error{
+    font-size: calc(10px + 1vw);
+  }
   .md-modal-fancybox{
       width: 100%;
   }
@@ -716,7 +719,7 @@ p.error{
   background: #FFF;
   z-index: 99;
   border-bottom: 1px solid #0041d1;
-  padding: 20px 5% !important;
+  padding: 10px 15% !important;
 }
 
 .scroll-btn{
@@ -801,6 +804,9 @@ p.error{
   background: #fdbb04;
 }
 @media screen and (max-width: 767px){
+  .scroll-top{
+    padding: 10px 5% !important;
+  }
   .banner .md-desktop{
     display: none !important;
   }
@@ -852,4 +858,13 @@ p.error{
   padding: 10px 20px;
   border-radius: 20px;
   z-index: 999;
+}
+.back-to-home:hover{
+  color: #FFF;
+}
+
+@media screen and (min-width: 1599px){
+  .md-modal-fancybox{
+    width: 40%;
+  }
 }
