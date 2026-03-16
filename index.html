@@ -31,6 +31,16 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet" media="screen">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1TB9Q7VBF1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-1TB9Q7VBF1');
+    </script>
 </head>
 <body>
     <header class="page-header">
@@ -296,11 +306,11 @@
                     </div>
                     <div class="register-right wow fadeInLeft">
                         
-                      <form class="register-form clearfix" >
+                      <form class="register-form clearfix" id="ggcontact">
                         
                         <div class="form-group">
                           <label for="parent-name">Họ và tên phụ huynh:</label>
-                          <input type="text" id="parent-name" name="parent-name" placeholder="Nguyễn Văn A" required />
+                          <input type="text" id="parent-name" name="parent_name" placeholder="Nguyễn Văn A" required />
                           <!-- <p class="error">Vui lòng nhập họ tên phụ huynh</p> -->
                         </div>
                         <div class="form-group">
@@ -315,7 +325,7 @@
                         </div>
                         <div class="form-group">
                           <label for="child-name">Họ tên bé:</label>
-                          <input type="text" id="child-name" name="child-name" placeholder="Tên của bé" required />
+                          <input type="text" id="child-name" name="child_name" placeholder="Tên của bé" required />
                           <!-- <p class="error">Vui lòng nhập họ tên bé</p> -->
                         </div>
                         <div class="form-group">
@@ -323,7 +333,8 @@
                           <input type="text" id="area" name="area" placeholder="Quận/Huyện, TP.HCM" />
                           <!-- <p class="error">Vui lòng nhập khu vực sinh sống</p> -->
                         </div>
-                        <input type="button" class="btn-submit" value="GỬI THÔNG TIN" >
+                        <input type="hidden" class="current-date" value="" name="register_date"/>
+                        <input type="button" id="gg-submit" class="btn-submit" value="GỬI THÔNG TIN" onclick="App.Dev.register()">
                       </form>
                       <div id="modal-sucess-1" class="md-modal-fancybox" >
                           <img src="./images/check.png" alt="">
@@ -377,6 +388,7 @@
     </div>
 </body>
 <script src="vendor/jquery/jquery-2.1.0.min.js"></script>
+<script src="vendor/jquery/jquery.validate.js"></script>
 <script src="vendor/bootstrap/bootstrap.min.js"></script>
 <script src="vendor/owlcarousel/owl.carousel.min.js"></script>
 <script src="vendor/wow/wow.min.js" type="text/javascript"></script>
@@ -384,4 +396,5 @@
 <script src="vendor/semantic/semantic.js" type="text/javascript" ></script>
 <script src="vendor/semantic/semantic.min.js" type="text/javascript" ></script>
 <script src="scripts/main.js"></script>
+<script src="scripts/dcommon.js"></script>
 </html>
