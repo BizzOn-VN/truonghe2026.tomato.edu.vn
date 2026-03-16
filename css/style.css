@@ -149,7 +149,7 @@ img{
   color: #0040b1;
   font-weight: 800;
   margin-bottom: 0px;
-  font-size: calc(4px + 2vw);
+  font-size: calc(4px + 1.5vw);
 }
 .page-main .section-1 .md-content .md-right p span{
   font-weight: 900;
@@ -639,7 +639,7 @@ p.error{
     width: 100%;
   }
   .page-main .section-1 .md-content .md-right p{
-    font-size: calc(10px + 2vw);
+    font-size: calc(8px + 2vw);
   }
   .md-title h6{
     font-size: calc(15px + 2vw);
