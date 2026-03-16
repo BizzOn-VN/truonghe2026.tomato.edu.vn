@@ -514,41 +514,33 @@ p.error{
 .md-modal-fancybox{
     display: none;
     width: 50%;
-    height: 50%;
+    height: auto;
     background: #FFF;
     position: relative;
     border-radius: 20px;
 }
 .md-modal-fancybox .md-content{
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    margin-bottom: 0px;
+    margin-bottom: 20px;
     text-align: center;
-    width: 75%;
-    color: #0040b2;
+    color: #089901;
 }
 .md-modal-fancybox .md-content h6{
     font-size: calc(5px + 2vw);
     font-weight: 700;
 }
 .md-modal-fancybox img{
-    position: absolute;
-    left: 50%;
-    top: 5%;
-    transform: translateX(-50%);
-    width: 12%;
+  display: table;
+  margin: 0 auto 20px;
+    width: 20%;
 }
 .md-modal-fancybox .md-close{
-    position: absolute;
-    bottom: 5%;
-    left: 50%;
-    transform: translateX(-50%);
+    position: relative;
     top: auto;
     width: 50%;
     color: #FFF;
-    background: #0040b2;
+    background: #089901;
+    display: table;
+    margin: 0 auto;
 }
 .fancybox-is-open .fancybox-stage{
     overflow: auto;
@@ -601,7 +593,9 @@ p.error{
 @media screen and (max-width: 767px){
   .md-modal-fancybox{
       width: 100%;
-      height: 30%;
+  }
+  .md-modal-fancybox img{
+    width: 20%;
   }
   .md-modal-fancybox .md-content h6{
       font-size: calc(10px + 4vw);
