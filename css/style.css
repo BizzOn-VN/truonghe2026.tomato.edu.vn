@@ -305,9 +305,12 @@ img{
 }
 .page-main .section-5{
   padding: 40px 0px;
-  background: #e6f6fb;
+  background: url(../images/bg-page.png) no-repeat;
+    background-size: 100% 100%;
 }
-
+.page-first-step .section-5 .md-title h6{
+  color: #dc3655;
+}
 .page-main .section-6{
   padding: 40px 0px;
 }
@@ -429,8 +432,12 @@ img{
   color: #41509b;
 }
 .location-list li::before {
-  content: '🍅';
-  font-size: 18px;
+  content: '';
+  background: url(../images/ico-tomato.png) no-repeat;
+  background-size: 100% 100%;
+  width: 25px;
+  height: 25px;
+  display: block;
 }
 
 .register-form {
