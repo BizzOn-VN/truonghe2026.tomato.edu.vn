@@ -102,7 +102,7 @@ $('.section-6 .owl-carousel').owlCarousel({
     }
 });
 
-const target = document.getElementById('targetDiv');
+const target = document.getElementById('dang-ky');
 const buttons = document.querySelectorAll('.scroll-btn');
 
   buttons.forEach(button => {
