@@ -31,7 +31,7 @@ App.Dev = function(){
 
             jQuery.ajax({
                 type : 'GET',
-                url: 'https://script.google.com/macros/s/AKfycbyyGgQAd4Z1Vmh8SyK3byRg2zgJ5GvGnpptukHk261yH4q_4nEtn23HuACrd_2c8F8H/exec',
+                url: 'https://script.google.com/macros/s/AKfycbwjQABwj0SGRRrKiXcuE0dency-tClvvhXelgF2oOanbTHAYtystk4vRpIDlA56Ukk5/exec',
                 dataType:'json',
                 crossDomain : true,
                 data : data,
@@ -48,7 +48,7 @@ App.Dev = function(){
 
                         if (data.result == "success") {
                             gtag('event', 'dangKyThanhCong-mindFulExplorer'); //send GA
-                            
+
                             $.fancybox.close();
                             $("#modal-sucess-1").fancybox().trigger('click');
                         }
