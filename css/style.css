@@ -550,7 +550,7 @@ p.error{
 }
 .footer{
   display: grid;
-   grid-template-columns: repeat(3, 1fr);
+   grid-template-columns: repeat(4, 1fr);
    padding-bottom: 30px;
 }
 .footer .md-col img{
@@ -560,7 +560,7 @@ p.error{
 .footer .md-col p{
   float: right;
   width: 88%;
-  margin-top: 5px;
+  margin-top: 3px;
   font-weight: 900;
 }
 
