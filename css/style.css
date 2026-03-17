@@ -724,6 +724,9 @@ p.error{
   border-bottom: 1px solid #0041d1;
   padding: 10px 15% !important;
 }
+.page-header .main-header.scroll-top .md-col img{
+  width: 50%;
+}
 
 .scroll-btn{
   cursor: pointer;
@@ -808,7 +811,10 @@ p.error{
 }
 @media screen and (max-width: 767px){
   .scroll-top{
-    padding: 10px 5% !important;
+    padding: 5px 5% !important;
+  }
+  .page-header .main-header.scroll-top .md-col img{
+    width: 60%;
   }
   .banner .md-desktop{
     display: none !important;
