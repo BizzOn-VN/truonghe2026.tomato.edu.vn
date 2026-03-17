@@ -481,7 +481,7 @@ img{
 .form-group select:focus {
   
 }
-.form-group input.error{
+.form-group .error input{
   color: #e30016;
 }
 
