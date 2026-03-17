@@ -481,6 +481,9 @@ img{
 .form-group select:focus {
   
 }
+.form-group input.error{
+  color: #e30016;
+}
 
 .btn-submit {
   width: 50%;
