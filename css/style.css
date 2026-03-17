@@ -877,3 +877,7 @@ p.error{
     width: 40%;
   }
 }
+
+html {
+  scroll-behavior: smooth;
+}
